@@ -5,6 +5,7 @@ import {
   Scripts,
   ScrollRestoration,
 } from "@remix-run/react";
+import TodoLayout from "~/Layout";
 
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
@@ -25,7 +26,11 @@ export function Layout({ children }: { children: React.ReactNode }) {
 }
 
 export default function App() {
-  return <Outlet />;
+  return (
+    <TodoLayout>
+      <Outlet />
+    </TodoLayout>
+  );
 }
 
 export function HydrateFallback() {
